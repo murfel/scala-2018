@@ -1,4 +1,4 @@
-name := "AntlrExample"
+name := "01-calculator"
 
 version := "0.1"
 
