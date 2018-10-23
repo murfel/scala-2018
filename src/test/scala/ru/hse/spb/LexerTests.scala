@@ -1,3 +1,5 @@
+package ru.hse.spb
+
 import org.antlr.v4.runtime.CharStreams
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -1,7 +1,8 @@
+package ru.hse.spb
+
 import org.antlr.v4.runtime._
+import org.junit.Assert.{assertEquals, assertTrue}
 import org.junit.Test
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
 
 class EvaluationTests {
   def test(input: String, expected: Int): Unit = {

@@ -1,3 +1,5 @@
+package ru.hse.spb
+
 import java.util.Scanner
 
 import org.antlr.v4.runtime.{CharStreams, CommonTokenStream}
