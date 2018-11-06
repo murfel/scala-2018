@@ -1,4 +1,4 @@
-package ru.hse.spb;// Generated from /Users/murfel/IdeaProjects/AntlrExample/src/main/antlr/Exp.g4 by ANTLR 4.7
+// Generated from /Users/murfel/scala-2018/src/main/antlr/Exp.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

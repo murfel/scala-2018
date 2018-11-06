@@ -1,9 +1,12 @@
-package ru.hse.spb;// Generated from /Users/murfel/IdeaProjects/AntlrExample/src/main/antlr/Exp.g4 by ANTLR 4.7
+// Generated from /Users/murfel/scala-2018/src/main/antlr/Exp.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ExpParser extends Parser {
@@ -114,7 +117,7 @@ public class ExpParser extends Parser {
 			{
 			setState(16);
 			((EvalContext)_localctx).exp = precedence15();
-			((EvalContext)_localctx).value =  ((EvalContext)_localctx).exp.value;
+			((EvalContext)_localctx).value =  ((EvalContext)_localctx).exp.value;System.out.println("kekEval");
 			}
 		}
 		catch (RecognitionException re) {
@@ -166,7 +169,7 @@ public class ExpParser extends Parser {
 			{
 			setState(19);
 			((Precedence15Context)_localctx).o1 = precedence14();
-			((Precedence15Context)_localctx).value =  ((Precedence15Context)_localctx).o1.value;
+			((Precedence15Context)_localctx).value =  ((Precedence15Context)_localctx).o1.value;System.out.println("kek15");
 			setState(27);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -235,7 +238,7 @@ public class ExpParser extends Parser {
 			{
 			setState(30);
 			((Precedence14Context)_localctx).o1 = precedence10();
-			((Precedence14Context)_localctx).value =  ((Precedence14Context)_localctx).o1.value;
+			((Precedence14Context)_localctx).value =  ((Precedence14Context)_localctx).o1.value;System.out.println("kek14");
 			setState(38);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -304,7 +307,7 @@ public class ExpParser extends Parser {
 			{
 			setState(41);
 			((Precedence10Context)_localctx).o1 = precedence9();
-			((Precedence10Context)_localctx).value =  ((Precedence10Context)_localctx).o1.value;
+			((Precedence10Context)_localctx).value =  ((Precedence10Context)_localctx).o1.value;System.out.println("kek10");
 			setState(53);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -390,7 +393,7 @@ public class ExpParser extends Parser {
 			{
 			setState(56);
 			((Precedence9Context)_localctx).o1 = precedence6();
-			((Precedence9Context)_localctx).value =  ((Precedence9Context)_localctx).o1.value;
+			((Precedence9Context)_localctx).value =  ((Precedence9Context)_localctx).o1.value;System.out.println("kek9");
 			setState(76);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -494,7 +497,7 @@ public class ExpParser extends Parser {
 			{
 			setState(79);
 			((Precedence6Context)_localctx).o1 = precedence5();
-			((Precedence6Context)_localctx).value =   ((Precedence6Context)_localctx).o1.value;
+			((Precedence6Context)_localctx).value =   ((Precedence6Context)_localctx).o1.value;System.out.println("kek6");
 			setState(91);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -580,7 +583,7 @@ public class ExpParser extends Parser {
 			{
 			setState(94);
 			((Precedence5Context)_localctx).o1 = atomExp();
-			((Precedence5Context)_localctx).value =   ((Precedence5Context)_localctx).o1.value;
+			((Precedence5Context)_localctx).value =   ((Precedence5Context)_localctx).o1.value;System.out.println("kek5");
 			setState(110);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -676,7 +679,7 @@ public class ExpParser extends Parser {
 				{
 				setState(113);
 				((AtomExpContext)_localctx).n = match(Number);
-				((AtomExpContext)_localctx).value =  Integer.parseInt((((AtomExpContext)_localctx).n!=null?((AtomExpContext)_localctx).n.getText():null));
+				((AtomExpContext)_localctx).value =  Integer.parseInt((((AtomExpContext)_localctx).n!=null?((AtomExpContext)_localctx).n.getText():null));System.out.println("kekAtom");
 				}
 				break;
 			case T__13:
@@ -688,7 +691,7 @@ public class ExpParser extends Parser {
 				((AtomExpContext)_localctx).exp = precedence15();
 				setState(117);
 				match(T__14);
-				((AtomExpContext)_localctx).value =  ((AtomExpContext)_localctx).exp.value;
+				((AtomExpContext)_localctx).value =  ((AtomExpContext)_localctx).exp.value;System.out.println("kekAtom");
 				}
 				break;
 			default:
