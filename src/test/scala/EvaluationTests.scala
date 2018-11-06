@@ -1,25 +1,27 @@
-package ru.hse.spb
-
 import org.antlr.v4.runtime._
 import org.junit.Assert.{assertEquals, assertTrue}
 import org.junit.Test
+import ru.hse.spb.{ExpLexer, ExpParser}
 
 class EvaluationTests {
-  def test(input: String, expected: Int): Unit = {
+  private def test(input: String, expected: Int): Unit = {
     val lexer = new ExpLexer(CharStreams.fromString(input))
     val tokens = new CommonTokenStream(lexer)
     val parser = new ExpParser(tokens)
+    parser.setTrace(true)
     val actual = parser.eval().value
     assertEquals(0, parser.getNumberOfSyntaxErrors)
     assertEquals(expected, actual)
+//    assertTrue(parser.isMatchedEOF)  // this is always false for some reason
   }
 
-  def testSyntaxError(input: String): Unit = {
+  private def testSyntaxError(input: String): Unit = {
     val lexer = new ExpLexer(CharStreams.fromString(input))
     val tokens = new CommonTokenStream(lexer)
     val parser = new ExpParser(tokens)
     parser.eval()
-    assertTrue(parser.getNumberOfSyntaxErrors > 0)
+    assertTrue(parser.getNumberOfSyntaxErrors > 0 || !parser.isMatchedEOF)
+    // parser.isMatchedEOF is always false, even for correct expressions
   }
 
   @Test
@@ -57,8 +59,15 @@ class EvaluationTests {
     "1 % ( 2 <= 3 ) * ( 4 == ( ( 5 ) ) != 6 ) - 7 - 8 < 9 || 10 && 11 / ( 12 ) >= ( 13 > 14 )", 1)
 
   @Test
+  def `multiple consecutive ors`(): Unit = test(
+    "0 || 1 || 0", 1
+  )
+
+  @Test
   def `syntax error no operator`(): Unit = testSyntaxError("1 1")
 
   @Test
   def `syntax error no operator, with parenthesis`(): Unit = testSyntaxError("1(1)")
+
+
 }

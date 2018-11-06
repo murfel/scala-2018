@@ -1,8 +1,7 @@
-package ru.hse.spb
-
 import org.antlr.v4.runtime.CharStreams
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import ru.hse.spb.ExpLexer
 
 import scala.collection.JavaConverters._
 
@@ -10,15 +9,15 @@ class LexerTests {
   /**
     * @param input a string of tokens separated by space characters
     */
-  def generateTestAndTest(input: String): Unit = {
+  private def generateTestAndTest(input: String): Unit = {
     generateTestAndTest(input.split("\\s+").toList)
   }
 
-  def generateTestAndTest(input: List[String]): Unit = {
+  private def generateTestAndTest(input: List[String]): Unit = {
     test(input.mkString(""), input)
   }
 
-  def test(input: String, expected: List[String]): Unit = {
+  private def test(input: String, expected: List[String]): Unit = {
     val lexer = new ExpLexer(CharStreams.fromString(input))
     val tokens = collectionAsScalaIterable(lexer.getAllTokens).map(x => x.getText)
     assertEquals(expected, tokens)

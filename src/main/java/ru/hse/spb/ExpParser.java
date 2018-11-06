@@ -1,12 +1,9 @@
-// Generated from /Users/murfel/scala-2018/src/main/antlr/Exp.g4 by ANTLR 4.7
+package ru.hse.spb;// Generated from /Users/murfel/scala-2018/src/main/antlr/Exp.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class ExpParser extends Parser {
@@ -117,7 +114,7 @@ public class ExpParser extends Parser {
 			{
 			setState(16);
 			((EvalContext)_localctx).exp = precedence15();
-			((EvalContext)_localctx).value =  ((EvalContext)_localctx).exp.value;System.out.println("kekEval");
+			((EvalContext)_localctx).value =  ((EvalContext)_localctx).exp.value;
 			}
 		}
 		catch (RecognitionException re) {
@@ -169,7 +166,7 @@ public class ExpParser extends Parser {
 			{
 			setState(19);
 			((Precedence15Context)_localctx).o1 = precedence14();
-			((Precedence15Context)_localctx).value =  ((Precedence15Context)_localctx).o1.value;System.out.println("kek15");
+			((Precedence15Context)_localctx).value =  ((Precedence15Context)_localctx).o1.value;
 			setState(27);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -180,7 +177,7 @@ public class ExpParser extends Parser {
 				match(T__0);
 				setState(22);
 				((Precedence15Context)_localctx).o2 = precedence14();
-				((Precedence15Context)_localctx).value =  (((((Precedence15Context)_localctx).o1.value != 0) || (((Precedence15Context)_localctx).o2.value != 0))) ? 1 : 0;
+				((Precedence15Context)_localctx).value =  (((_localctx.value != 0) || (((Precedence15Context)_localctx).o2.value != 0))) ? 1 : 0;
 				}
 				}
 				setState(29);
@@ -238,7 +235,7 @@ public class ExpParser extends Parser {
 			{
 			setState(30);
 			((Precedence14Context)_localctx).o1 = precedence10();
-			((Precedence14Context)_localctx).value =  ((Precedence14Context)_localctx).o1.value;System.out.println("kek14");
+			((Precedence14Context)_localctx).value =  ((Precedence14Context)_localctx).o1.value;
 			setState(38);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -249,7 +246,7 @@ public class ExpParser extends Parser {
 				match(T__1);
 				setState(33);
 				((Precedence14Context)_localctx).o2 = precedence10();
-				((Precedence14Context)_localctx).value =  (((((Precedence14Context)_localctx).o1.value != 0) && (((Precedence14Context)_localctx).o2.value != 0))) ? 1 : 0;
+				((Precedence14Context)_localctx).value =  (((_localctx.value != 0) && (((Precedence14Context)_localctx).o2.value != 0))) ? 1 : 0;
 				}
 				}
 				setState(40);
@@ -307,7 +304,7 @@ public class ExpParser extends Parser {
 			{
 			setState(41);
 			((Precedence10Context)_localctx).o1 = precedence9();
-			((Precedence10Context)_localctx).value =  ((Precedence10Context)_localctx).o1.value;System.out.println("kek10");
+			((Precedence10Context)_localctx).value =  ((Precedence10Context)_localctx).o1.value;
 			setState(53);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -322,7 +319,7 @@ public class ExpParser extends Parser {
 					match(T__2);
 					setState(44);
 					((Precedence10Context)_localctx).o2 = precedence9();
-					((Precedence10Context)_localctx).value =  (((Precedence10Context)_localctx).o1.value == ((Precedence10Context)_localctx).o2.value) ? 1 : 0;
+					((Precedence10Context)_localctx).value =  (_localctx.value == ((Precedence10Context)_localctx).o2.value) ? 1 : 0;
 					}
 					break;
 				case T__3:
@@ -331,7 +328,7 @@ public class ExpParser extends Parser {
 					match(T__3);
 					setState(48);
 					((Precedence10Context)_localctx).o2 = precedence9();
-					((Precedence10Context)_localctx).value =  (((Precedence10Context)_localctx).o1.value != ((Precedence10Context)_localctx).o2.value) ? 1 : 0;
+					((Precedence10Context)_localctx).value =  (_localctx.value != ((Precedence10Context)_localctx).o2.value) ? 1 : 0;
 					}
 					break;
 				default:
@@ -393,7 +390,7 @@ public class ExpParser extends Parser {
 			{
 			setState(56);
 			((Precedence9Context)_localctx).o1 = precedence6();
-			((Precedence9Context)_localctx).value =  ((Precedence9Context)_localctx).o1.value;System.out.println("kek9");
+			((Precedence9Context)_localctx).value =  ((Precedence9Context)_localctx).o1.value;
 			setState(76);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -408,7 +405,7 @@ public class ExpParser extends Parser {
 					match(T__4);
 					setState(59);
 					((Precedence9Context)_localctx).o2 = precedence6();
-					((Precedence9Context)_localctx).value =  (((Precedence9Context)_localctx).o1.value < ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
+					((Precedence9Context)_localctx).value =  (_localctx.value < ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
 					}
 					break;
 				case T__5:
@@ -417,7 +414,7 @@ public class ExpParser extends Parser {
 					match(T__5);
 					setState(63);
 					((Precedence9Context)_localctx).o2 = precedence6();
-					((Precedence9Context)_localctx).value =  (((Precedence9Context)_localctx).o1.value <= ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
+					((Precedence9Context)_localctx).value =  (_localctx.value <= ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
 					}
 					break;
 				case T__6:
@@ -426,7 +423,7 @@ public class ExpParser extends Parser {
 					match(T__6);
 					setState(67);
 					((Precedence9Context)_localctx).o2 = precedence6();
-					((Precedence9Context)_localctx).value =  (((Precedence9Context)_localctx).o1.value > ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
+					((Precedence9Context)_localctx).value =  (_localctx.value > ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
 					}
 					break;
 				case T__7:
@@ -435,7 +432,7 @@ public class ExpParser extends Parser {
 					match(T__7);
 					setState(71);
 					((Precedence9Context)_localctx).o2 = precedence6();
-					((Precedence9Context)_localctx).value =  (((Precedence9Context)_localctx).o1.value >= ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
+					((Precedence9Context)_localctx).value =  (_localctx.value >= ((Precedence9Context)_localctx).o2.value) ? 1 : 0;
 					}
 					break;
 				default:
@@ -497,7 +494,7 @@ public class ExpParser extends Parser {
 			{
 			setState(79);
 			((Precedence6Context)_localctx).o1 = precedence5();
-			((Precedence6Context)_localctx).value =   ((Precedence6Context)_localctx).o1.value;System.out.println("kek6");
+			((Precedence6Context)_localctx).value =   ((Precedence6Context)_localctx).o1.value;
 			setState(91);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -583,7 +580,7 @@ public class ExpParser extends Parser {
 			{
 			setState(94);
 			((Precedence5Context)_localctx).o1 = atomExp();
-			((Precedence5Context)_localctx).value =   ((Precedence5Context)_localctx).o1.value;System.out.println("kek5");
+			((Precedence5Context)_localctx).value =   ((Precedence5Context)_localctx).o1.value;
 			setState(110);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -679,7 +676,7 @@ public class ExpParser extends Parser {
 				{
 				setState(113);
 				((AtomExpContext)_localctx).n = match(Number);
-				((AtomExpContext)_localctx).value =  Integer.parseInt((((AtomExpContext)_localctx).n!=null?((AtomExpContext)_localctx).n.getText():null));System.out.println("kekAtom");
+				((AtomExpContext)_localctx).value =  Integer.parseInt((((AtomExpContext)_localctx).n!=null?((AtomExpContext)_localctx).n.getText():null));
 				}
 				break;
 			case T__13:
@@ -691,7 +688,7 @@ public class ExpParser extends Parser {
 				((AtomExpContext)_localctx).exp = precedence15();
 				setState(117);
 				match(T__14);
-				((AtomExpContext)_localctx).value =  ((AtomExpContext)_localctx).exp.value;System.out.println("kekAtom");
+				((AtomExpContext)_localctx).value =  ((AtomExpContext)_localctx).exp.value;
 				}
 				break;
 			default:

@@ -11,29 +11,29 @@ eval returns [int value]
 
 precedence15 returns [int value]
     :   o1=precedence14 {$value = $o1.value;}
-        ('||' o2=precedence14 {$value = ((($o1.value != 0) || ($o2.value != 0))) ? 1 : 0;}
+        ('||' o2=precedence14 {$value = ((($value != 0) || ($o2.value != 0))) ? 1 : 0;}
         )*
     ;
 
 precedence14 returns [int value]
     :   o1=precedence10 {$value = $o1.value;}
-        ('&&' o2=precedence10 {$value = ((($o1.value != 0) && ($o2.value != 0))) ? 1 : 0;}
+        ('&&' o2=precedence10 {$value = ((($value != 0) && ($o2.value != 0))) ? 1 : 0;}
         )*
     ;
 
 precedence10 returns [int value]
     :    o1=precedence9 {$value = $o1.value;}
-        ( '==' o2=precedence9 {$value = ($o1.value == $o2.value) ? 1 : 0;}
-        | '!=' o2=precedence9 {$value = ($o1.value != $o2.value) ? 1 : 0;}
+        ( '==' o2=precedence9 {$value = ($value == $o2.value) ? 1 : 0;}
+        | '!=' o2=precedence9 {$value = ($value != $o2.value) ? 1 : 0;}
         )*
     ;
 
 precedence9 returns [int value]
     :    o1=precedence6 {$value = $o1.value;}
-        ( '<' o2=precedence6 {$value = ($o1.value < $o2.value) ? 1 : 0;}
-        | '<=' o2=precedence6 {$value = ($o1.value <= $o2.value) ? 1 : 0;}
-        | '>' o2=precedence6 {$value = ($o1.value > $o2.value) ? 1 : 0;}
-        | '>=' o2=precedence6 {$value = ($o1.value >= $o2.value) ? 1 : 0;}
+        ( '<' o2=precedence6 {$value = ($value < $o2.value) ? 1 : 0;}
+        | '<=' o2=precedence6 {$value = ($value <= $o2.value) ? 1 : 0;}
+        | '>' o2=precedence6 {$value = ($value > $o2.value) ? 1 : 0;}
+        | '>=' o2=precedence6 {$value = ($value >= $o2.value) ? 1 : 0;}
         )*
     ;
 
