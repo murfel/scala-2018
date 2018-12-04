@@ -126,6 +126,13 @@ class TreapSetTests {
     val expected = List(1, 2, 3, 4, 5, 6)
     assertEquals(expected, actual)
   }
+
+  @Test
+  def testForComprehension(): Unit = {
+    val set = createSet(1, 2, 3)
+    val newSet = for (x <- set) yield x
+    assertEquals(List(1, 2, 3), setToList(newSet))
+  }
 }
 
 
