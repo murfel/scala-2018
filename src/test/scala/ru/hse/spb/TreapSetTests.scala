@@ -14,6 +14,12 @@ class TreapSetTests {
     set
   }
 
+  private def setToList(set: TreapSet[Int]): List[Int] = {
+    val list = new mutable.MutableList[Int]()
+    set.foreach(x => list += x)
+    list.toList
+  }
+
   @Test
   def testSizeEmpty(): Unit = {
     val set = new TreapSet[Int]()
@@ -102,12 +108,6 @@ class TreapSetTests {
     assertEquals(15, set.fold(0)((x: Int, y: Int) => x + y))
   }
 
-  private def setToList(set: TreapSet[Int]): List[Int] = {
-    val list = new mutable.MutableList[Int]()
-    set.foreach(x => list += x)
-    list.toList
-  }
-
   @Test
   def simpleMap(): Unit = {
     val set = createSet(1, 2, 4, 8)
@@ -120,7 +120,11 @@ class TreapSetTests {
 
   @Test
   def simpleFlatMap(): Unit = {
-
+    val set = createSet(1, 3, 5)
+    val actualSet = set.flatMap(x => createSet(x, x + 1))
+    val actual = setToList(actualSet)
+    val expected = List(1, 2, 3, 4, 5, 6)
+    assertEquals(expected, actual)
   }
 }
 
