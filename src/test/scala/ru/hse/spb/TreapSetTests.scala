@@ -4,8 +4,6 @@ import org.junit.Assert.{assertEquals, assertFalse, assertTrue}
 import org.junit.Test
 
 import scala.collection.mutable
-import scala.collection.mutable.ListBuffer
-import scala.util.Random
 
 class TreapSetTests {
   private def createSet[A](elements: A*)(implicit ord: Ordering[A]): TreapSet[A] = {
@@ -113,7 +111,7 @@ class TreapSetTests {
     val set = createSet(1, 2, 4, 8)
     val list = List(8, -3, 0, 9)
     val listIterator = list.iterator
-    val mappedSet = set.map(x => listIterator.next())
+    val mappedSet = set.map(_ => listIterator.next())
     val expected = List(-3, 0, 8, 9)
     assertTrue(expected == setToList(mappedSet))
   }
@@ -134,44 +132,3 @@ class TreapSetTests {
     assertEquals(List(1, 2, 3), setToList(newSet))
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
