@@ -9,17 +9,19 @@ object HList {
   case object HNil extends HList
 
   implicit class HListExt[R <: HList](private val list: R) extends AnyVal {
-
     def ::[H](head: H) = HCons(head, list)
 
-    def :::[L <: HList, Result <: HList]
-    (left: L)(implicit appendable: Appendable[L, R, Result]): Result =
+    def :::[L <: HList, Result <: HList] (left: L)
+    (implicit appendable: Appendable[L, R, Result]): Result =
       appendable(left, list)
 
-    // 0 1 2 3 4
-    def splitAt[Index <: Integer, Left <: HList, Right <: HList]
-    (index: Index): (Left, Right) = ???
+    def splitAt[Index <: Integer, Left <: HList, Right <: HList] (index: Index)
+    (implicit splittable: Splittable[R, Index, Left, Right]): (Left, Right) =
+      splittable(list, index)
 
+    def zip[Right <: HList, Result <: HList]
+    (right: Right) (implicit zippable: Zippable[R, Right, Result]): Result =
+      zippable(list, right)
   }
 
   def main(args: Array[String]): Unit = {
@@ -28,11 +30,5 @@ object HList {
     val hello: String = list.head
     val world: String = list.tail.tail.tail.head
     println(s"$hello $world")
-
-    // val l1
-    // val l2
-    // val l = zip(l1, l2)
-    // l[]
-
   }
 }
