@@ -7,8 +7,8 @@ object Integer {
   sealed trait NonNegative <: Integer
 
   case object O extends NonPositive with NonNegative
-  case class S[nonNegative <: NonNegative](nonNegative: NonNegative) extends NonNegative
-  case class P[nonPositive <: NonPositive](nonPositive: NonPositive) extends NonPositive
+  case class S[nonNegative <: NonNegative](predecessor: NonNegative) extends NonNegative
+  case class P[nonPositive <: NonPositive](successor: NonPositive) extends NonPositive
 
   val _0: O.type = O
 
