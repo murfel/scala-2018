@@ -5,7 +5,12 @@ trait Zippable[Left <: HList, Right <: HList, Result <: HList] {
 }
 
 object Zippable {
-  import HList.{HCons, HNil}
+//  import HList.{HCons, HNil}
+
+  import HList._
+
+  implicit def zippableLeftAndRightAreNil[Right <: HList]: Zippable[HNil.type, HNil.type, HNil.type] =
+    (_: HNil.type, _: HNil.type ) => HNil
 
   implicit def zippableLeftIsNil[Right <: HList]: Zippable[HNil.type, Right, HNil.type] =
     (_: HNil.type, _: Right) => HNil
