@@ -3,12 +3,12 @@ package HList
 sealed trait HList
 
 object HList {
-  case class HCons[+H, +T <: HList](head: H, tail: T) extends HList
+  case class HCons[Head, Tail <: HList](head: Head, tail: Tail) extends HList
 
   case object HNil extends HList
 
   implicit class HListExt[List <: HList](private val list: List) extends AnyVal {
-    def ::[H](head: H) = HCons(head, list)
+    def ::[Head](head: Head) = HCons(head, list)
 
     def :::[Left <: HList, Result <: HList] (left: Left)
     (implicit appendable: Appendable[Left, List, Result]): Result =
